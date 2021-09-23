@@ -1,0 +1,5 @@
+tamper http verb authentification with burp
+bbcode injection, disconnect 
+login with admin, exploits
+
+Ho5M6UPkLJMncnW

@@ -1,0 +1,64 @@
+<?php
+  $conf = [
+    "flag"        => "Th1sIsTh3Fl4g!",
+    "home"        => '<h2>Welcome</h2>
+    <div>Welcome on my personal website !</div>',
+    "cv"          => [
+      "gender"      => true,
+      "birth"       => 441759600,
+      "jobs"        => [
+        [
+          "title"     => "Coffee developer @Megaupload",
+          "date"      => "01/2010"
+        ],
+        [
+          "title"     => "Bed tester @YourMom's",
+          "date"      => "03/2011"
+        ],
+        [
+          "title"     => "Beer drinker @NearestBar",
+          "date"      => "10/2014"
+        ]
+      ]
+    ],
+    "contact"       => [
+      "firstname"     => "John",
+      "lastname"      => "Smith",
+      "phone"         => "01 33 71 00 01",
+      "mail"          => "john.smith@thegame.com"
+    ],
+    "global_style"  => '<style media="screen">
+      body{
+        background: rgb(231, 231, 231);
+        font-family: Tahoma,Verdana,Segoe,sans-serif;
+        font-size: 14px;
+      }
+      div#main{
+        padding: 20px 10px;
+      }
+      nav{
+        border: 1px solid rgb(101, 101, 101);
+        font-size: 0;
+      }
+      nav a{
+        font-size: 14px;
+        padding: 5px 10px;
+        box-sizing: border-box;
+        display: inline-block;
+        text-decoration: none;
+        color: #555;
+      }
+      nav a.active{
+        color: #fff;
+        background: rgb(119, 138, 144);
+      }
+      nav a:hover{
+        color: #fff;
+        background: rgb(119, 138, 144);
+      }
+      h2{
+        margin-top:0;
+      }
+      </style>'
+  ];
+

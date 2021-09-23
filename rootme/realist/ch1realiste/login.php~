@@ -1,0 +1,51 @@
+<?php
+$login2=htmlentities($_POST["login"]);
+$pass2=$_POST["pass2"];
+$dec=$_POST["dec"];
+
+
+if (isset($dec) && $dec!="") {
+	$pass2="";
+	$login2="";
+	SetCookie("galerie");
+}
+
+include("mesfonction.php3");
+
+if (isset($login2) && !empty($login2)) {	
+	$formatMysql="ymd";
+	$dateMysql=date($formatMysql);
+	if (isset($pass2) && !empty($pass2))
+	    SetCookie("galerie", $login2.":".base64_encode($pass2));
+}
+
+include ("head.html");
+include("script.html");
+include("menu.html");
+include("date.php3");
+
+echo '<table align="right" border="2" width="600" cellspacing="5"><TR><TD  background=img/bg9.jpg>';
+echo '<form method="post" name="log" target=""><br><br><table align=center><TR><TD>';
+echo '<strong>Nom d\'utilisateur</TD><TD></strong><input align="right" class="post" type="text" maxlength="32" name="login" size="20"></TD></TR>';
+echo '<TR><TD><strong>Mot de passe</strong></TD><TD><input align="right" class="post" onFocus="" type="password" maxlength="32" name="pass2" size="20"></TD></TR>';
+echo '<TR><TD></TD><TD><br><br><center><input class="post" type="submit" name="mess" value="Se connecter"></center></TD></TR>';
+echo '</table>';
+
+if (isset($dec) && $dec!="") {
+	echo "<center><font color=red><h2>Au revoir</h2><br><br></font><center>";
+	echo '<script language="javascript" type="text/javascript">
+		window.location.replace("");
+		</script>';
+} else if (isset($login2) && !empty($login2)) {	
+	if (base64_encode($pass2) == "YXplcnR5NjU0JiY=") {
+		echo "<center><font color=red><h2>Bienvennue $login2</h2><br><br></font>Redirection en cours...<center>";
+			echo '<script language="javascript" type="text/javascript">
+			window.location.replace("index.php3");
+			</script>';
+	} else {
+		echo '<center><font color="red">login/mot de passe incorrect<br><br></font></center>';
+	}
+}
+echo "</form></TD></TR></table>";
+include("footer.html");
+?>

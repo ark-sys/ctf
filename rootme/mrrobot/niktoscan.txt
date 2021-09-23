@@ -1,0 +1,23 @@
+- Nikto v2.1.6/2.1.5
+- Nikto v2.1.6/2.1.5
++ Target Host: ctf03.root-me.org
++ Target Port: 80
++ GET The X-XSS-Protection header is not defined. This header can hint to the user agent to protect against some forms of XSS
++ GET The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type
++ GET Retrieved x-powered-by header: PHP/5.5.29
++ GET Uncommon header 'tcn' found, with contents: list
++ GET Apache mod_negotiation is enabled with MultiViews, which allows attackers to easily brute force file names. See http://www.wisec.it/sectou.php?id=4698ebdc59d15. The following alternatives for 'index' were found: index.html, index.php
++ OSVDB-3092: GET /admin/: This might be interesting...
++ OSVDB-3092: GET /readme: This might be interesting...
++ GET Uncommon header 'link' found, with contents: <http://ctf03.root-me.org/?p=23>; rel=shortlink
++ GET /wp-links-opml.php: This WordPress script reveals the installed version.
++ OSVDB-3092: GET /license.txt: License file found may identify site software.
++ GET /admin/index.html: Admin login page/section found.
++ GET Cookie wordpress_test_cookie created without the httponly flag
++ GET /wp-login/: Admin login page/section found.
++ GET /wordpress: A Wordpress installation was found.
++ GET /wp-admin/wp-login.php: Wordpress login found
++ GET /wordpresswp-admin/wp-login.php: Wordpress login found
++ GET /blog/wp-login.php: Wordpress login found
++ GET /wp-login.php: Wordpress login found
++ GET /wordpresswp-login.php: Wordpress login found

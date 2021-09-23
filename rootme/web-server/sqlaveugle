@@ -1,0 +1,12 @@
+
+
+Bonjour,
+
+Cela fait plus de 5 mois maintenant que galère sur le challenge "SQL- Injections en aveugle" (censé rapporter 50 points, si ça peut vous aider à voir lequel). Après des dizaines de tentatives et surtout d’heures d’arrachage de cheveux 😄  😡 , j’ai fini par enfin trouver un résultat. Mais seulement voilà, un problème important survient : je ne peut valider le challenge, même avec le mot de passe correct de l’admin, censé être également le mot de passe de validation du challenge. Je m’explique : j’ai rentré dans la zone de texte utilisateur le code suivant :
+
+    admin’ AND password LIKE ’*****%’—
+
+, les petites étoiles étant censées être le mot de passe, que je découvrait au fur et à mesure, en testant chaque lettre de l’alphabet 😢  😴  🤐 ... J’ai fini par arriver au résultat suivant : e2azo93i. J’ai même vérifié ce mot de passe sur le challenge, aucun problème, mais au moment de la validation, impossible, le mot de passe n’est visiblement pas correct !
+
+Toute aide étant la bienvenue, je vous remercie de m’avoir lu ! 😄  😇  😇  😉  😇
+

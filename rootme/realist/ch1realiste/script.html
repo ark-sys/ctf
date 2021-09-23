@@ -1,0 +1,54 @@
+
+
+<script language="JavaScript" type="text/javascript">
+	
+
+
+	function bonchoix(){
+	resultat=confirm('Etes vous certain de votre choix ?');
+	
+		if(resultat !="1") {
+			return false;
+		}
+		else return true;
+	}
+
+
+
+	function confirm(){
+	 	if (window.confirm('Vous etes sur de ne pas faire une betise ?'))    
+                                   {return true;}
+                else {return false;}
+	}
+	
+	function login()
+	{
+	alert('Utilisez la connexion sécurisez pour vous connecter');
+	}
+
+		var scrolltimer;
+		function initScroll(BlockId, speedScroll) {
+			var MonObjet = document.getElementById(BlockId);
+			scrollBlock(BlockId,speedScroll);
+		}
+		
+		function scrollBlock(BlockId,speedScroll){
+			speedincrement = 1;
+			var monObjet = document.getElementById(BlockId)
+			if (speedScroll=='' | speedScroll==null | speedScroll <= 0) speedScroll = 40;
+			
+			//ScrollTop = ScrollTop + speed;
+			monObjet.scrollTop = monObjet.scrollTop + speedincrement;
+			if (monObjet.scrollTop >= monObjet.scrollHeight-monObjet.clientHeight) monObjet.scrollTop = 1;
+			scrolltimer = setTimeout("scrollBlock('"+ BlockId + "'," + speedScroll + ")", speedScroll);
+		}
+		
+		//initScroll('identifiantdemonobjet',vitesse); Vitesse est le temps en millisecond qu'il faut attendre pour avancer d'un pixel;
+		window.onload = function(){
+			initScroll('blocktoscroll',20);
+// 			initScroll('blocktoscroll2',40);
+// 			initScroll('blocktoscroll3',60);
+// 			MM_controlSound(play,document.gg);
+			
+		}
+</script>

@@ -1,0 +1,5 @@
+via burp
+- GET login.php~ , convert base64 password
+- POST login.php
+- encode '&' from password to %26
+- parms ---> login=admin&pass2=azerty654%26%26&mess=Se+connecter&dec=

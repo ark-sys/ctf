@@ -1,0 +1,6 @@
+register user :
+
+user : admin                 superlol
+password: lol123456
+
+Path truncation will remove spaces and 'superlol' from username, threfore when logging in it will try to log just as 'admin' with our custom password

