@@ -1,0 +1,8 @@
+
+
+POST :
+
+1. sudo -l
+2. run program with 'manual' option at a random page
+3. spawn shell with !/bin/sh
+

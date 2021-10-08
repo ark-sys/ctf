@@ -1,0 +1,4 @@
+# Nmap 7.91 scan initiated Sun Aug 29 18:17:25 2021 as: nmap -sV -sR -A -p- -oA /home/tryhackme/gatekeeper -O 10.10.127.0
+Host: 10.10.127.0 ()	Status: Up
+Host: 10.10.127.0 ()	Ports: 135/open/tcp//msrpc//Microsoft Windows RPC/, 139/open/tcp//netbios-ssn//Microsoft Windows netbios-ssn/, 445/open/tcp//microsoft-ds//Windows 7 Professional 7601 Service Pack 1 microsoft-ds (workgroup: WORKGROUP)/, 3389/open/tcp//ssl|ms-wbt-server?///, 31337/open/tcp//Elite?///, 49152/open/tcp//msrpc//Microsoft Windows RPC/, 49153/open/tcp//msrpc//Microsoft Windows RPC/, 49154/open/tcp//msrpc//Microsoft Windows RPC/, 49160/open/tcp//msrpc//Microsoft Windows RPC/, 49161/open/tcp//msrpc//Microsoft Windows RPC/, 49162/open/tcp//msrpc//Microsoft Windows RPC/	Ignored State: closed (65524)	Seq Index: 257	IP ID Seq: Incremental
+# Nmap done at Sun Aug 29 18:21:05 2021 -- 1 IP address (1 host up) scanned in 220.60 seconds

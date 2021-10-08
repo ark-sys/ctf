@@ -1,0 +1,10 @@
+hashcat (v5.1.0) starting...
+
+OpenCL Platform #1: The pocl project
+====================================
+* Device #1: pthread-AMD Ryzen 5 3500X 6-Core Processor, 8192/23555 MB allocatable, 6MCU
+
+Counting lines in Admin_hash.txt...[2KCounted lines in Admin_hash.txt...[2KParsed Hashes: 1/1 (100.00%)[2KParsed Hashes: 1/1 (100.00%)[2KSorting hashes...[2KSorted hashes...[2KRemoving duplicate hashes...[2KRemoved duplicate hashes...[2KSorting salts...[2KSorted salts...[2KComparing hashes with potfile entries...[2KCompared hashes with potfile entries...[2KINFO: All hashes found in potfile! Use --show to display them.
+
+Started: Mon Sep  6 23:23:10 2021
+[2KStopped: Mon Sep  6 23:23:10 2021
