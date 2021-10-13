@@ -1,0 +1,61 @@
+{'filterwarnings': <function filterwarnings at 0xb7c4695c>
+ 'once_registry': {}
+ 'WarningMessage': <class 'warnings.WarningMessage'>
+ '_show_warning': <function _show_warning at 0xb7c46924>
+ 'filters': [('ignore'
+ None
+ <type 'exceptions.DeprecationWarning'>
+ None
+ 0)
+ ('ignore'
+ None
+ <type 'exceptions.PendingDeprecationWarning'>
+ None
+ 0)
+ ('ignore'
+ None
+ <type 'exceptions.ImportWarning'>
+ None
+ 0)
+ ('ignore'
+ None
+ <type 'exceptions.BytesWarning'>
+ None
+ 0)]
+ '_setoption': <function _setoption at 0xb7c46a74>
+ 'showwarning': <function _show_warning at 0xb7c46924>
+ '__all__': ['warn'
+ 'warn_explicit'
+ 'showwarning'
+ 'formatwarning'
+ 'filterwarnings'
+ 'simplefilter'
+ 'resetwarnings'
+ 'catch_warnings']
+ 'onceregistry': {}
+ '__package__': None
+ 'simplefilter': <function simplefilter at 0xb7c469cc>
+ 'default_action': 'default'
+ '_getcategory': <function _getcategory at 0xb7c46ae4>
+ '__builtins__': {'om': <type 'object'>
+ 'ob': <type 'basestring'>
+ 'o': <type 'str'>
+ 'oms': <class 'warnings.catch_warnings'>
+ 'bs': {...}
+ 'hello': 15}
+ 'catch_warnings': <class 'warnings.catch_warnings'>
+ '__file__': '/usr/lib/python2.7/warnings.pyc'
+ 'warnpy3k': <function warnpy3k at 0xb7c46994>
+ 'sys': <module 'sys' (built-in)>
+ '__name__': 'warnings'
+ 'warn_explicit': <built-in function warn_explicit>
+ 'types': <module 'types' from '/usr/lib/python2.7/types.pyc'>
+ 'warn': <built-in function warn>
+ '_processoptions': <function _processoptions at 0xb7c46a3c>
+ 'defaultaction': 'default'
+ '__doc__': 'Python part of the warnings subsystem.'
+ 'linecache': <module 'linecache' from '/usr/lib/python2.7/linecache.pyc'>
+ '_OptionError': <class 'warnings._OptionError'>
+ 'resetwarnings': <function resetwarnings at 0xb7c46a04>
+ 'formatwarning': <function formatwarning at 0xb7c468ec>
+ '_getaction': <function _getaction at 0xb7c46aac>}

@@ -1,0 +1,7 @@
+gcc -c -o libutils1.o exploit.c
+gcc -shared -o libutils1.so libutils1.o
+
+then copy into home folder and run
+
+
+flag 1 : RUNPATH_should_be_absolute
